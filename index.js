@@ -4,14 +4,20 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-import BaseComponent from './BaseComponent'
+export default class Divider extends Component {
+  static propTypes = {
+    height: React.PropTypes.number,
+    color: React.PropTypes.string
+  }
 
-export default class Divider extends BaseComponent {
   render() {
     const height = this.props.height
+    const color = this.props.color
+
     const customDivider = {}
     _.assign(customDivider,
-      height ? { height: height } : {}
+      height ? { height: height } : {},
+      color ? { backgroundColor: color } : {}
     )
 
     return (
