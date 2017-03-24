@@ -1,34 +1,24 @@
 /**
  * Created by simon on 2017/3/15.
  */
-import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+  StyleSheet,
+  View,
+} from 'react-native';
 
-export default class Divider extends Component {
+export default class VisibleView extends Component {
+
   static propTypes = {
-    height: React.PropTypes.number,
-    color: React.PropTypes.string
+    visible: React.PropTypes.bool
   }
 
   render() {
-    const height = this.props.height
-    const color = this.props.color
+    const comp = this.props.visible
+      ? <View>{this.props.children}</View>
+      : null
 
-    const customDivider = {}
-    _.assign(customDivider,
-      height ? { height: height } : {},
-      color ? { backgroundColor: color } : {}
-    )
-
-    return (
-      <View style={StyleSheet.flatten([styles.divider, customDivider])}/>
-    )
-  }
-}
-
-const styles = {
-  divider: {
-    backgroundColor: '#D5D5D5',
-    height: 0.5
+    return comp
   }
 }
