@@ -6,8 +6,9 @@ import {View} from 'react-native';
 
 export default class VisibleView extends Component {
 
-  static propTypes = {
+Component  static propTypes = {
     visible: PropTypes.bool,
+    saiojipoafsdjiopsadfsdioasasdfasdf
   }
 
   static getDefaultProps() {
